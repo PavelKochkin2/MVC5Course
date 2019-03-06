@@ -1,0 +1,56 @@
+﻿@model VidlyReborn.ViewModels.MovieFormViewModel
+@{
+    ViewBag.Title = "MovieForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Movie.Id == 0)
+{
+    <h2>New Movie</h2>
+}
+else
+{
+    <h2>Edit Movie</h2>
+}
+
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.Name)
+        @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Movie.ReleaseDate)
+        @Html.TextBoxFor(m => m.Movie.ReleaseDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.ReleaseDate)
+    </div>
+
+    <div>
+        <label>Genre</label>
+        @Html.DropDownListFor(m => m.Movie.GenreId, new SelectList(Model.Genres, "Id", "Name"), "Select Genre", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.GenreId)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Movie.NumberInStock)
+        @Html.TextBoxFor(m => m.Movie.NumberInStock , new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
+    </div>
+
+    @Html.HiddenFor(m => m.Movie.Id)
+
+    @Html.AntiForgeryToken()
+
+    <button class="btn btn-primary" style="margin-top: 10px">Save</button>
+    <a href="javascript:history.go(-1)" class="btn btn-primary" style="margin-top: 10px">BACK</a>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}
+
+

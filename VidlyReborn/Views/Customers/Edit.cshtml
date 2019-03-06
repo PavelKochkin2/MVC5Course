@@ -1,0 +1,16 @@
+﻿@model VidlyReborn.Models.Customer
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var customHidden = @Model.BirthDay == null ? "hidden" : null;
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>Membership Type: @Model.MembershipType.Name </li>
+    <li class= "@customHidden">BirthDay: @Model.BirthDay</li>
+</ul>
+
