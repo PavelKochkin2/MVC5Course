@@ -198,3 +198,6 @@ C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.c
 C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.csproj.CopyComplete
 C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.dll
 C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.pdb
+C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.Migrations.AddedRental.resources
+C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.Migrations.UpdatedRentalModel.resources
+C:\Users\p.kochkin\Desktop\MVC5Course-master\VidlyReborn\obj\Debug\VidlyReborn.Migrations.AddedNumberAvaliablePropToRentalModel.resources

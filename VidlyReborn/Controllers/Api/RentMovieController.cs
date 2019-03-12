@@ -39,7 +39,7 @@ namespace VidlyReborn.Controllers.Api
             }
 
             _context.SaveChanges();
-
+            //temp
             return Ok(_context.Rentals);
         }
     }

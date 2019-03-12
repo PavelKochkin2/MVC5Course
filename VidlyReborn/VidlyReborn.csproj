@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,6 +48,12 @@
     <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -131,12 +138,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -188,6 +189,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\RentMovieController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="DTOs\GenreDto.cs" />
     <Compile Include="DTOs\MembershipTypeDto.cs" />
     <Compile Include="DTOs\MovieDto.cs" />
+    <Compile Include="DTOs\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -283,6 +286,18 @@
     <Compile Include="Migrations\201901291808377_Added_Driving_License_prop_to_ApplicationUser_Class.Designer.cs">
       <DependentUpon>201901291808377_Added_Driving_License_prop_to_ApplicationUser_Class.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903120831027_AddedRental.cs" />
+    <Compile Include="Migrations\201903120831027_AddedRental.Designer.cs">
+      <DependentUpon>201903120831027_AddedRental.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903120836203_UpdatedRentalModel.cs" />
+    <Compile Include="Migrations\201903120836203_UpdatedRentalModel.Designer.cs">
+      <DependentUpon>201903120836203_UpdatedRentalModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903121035497_AddedNumberAvaliablePropToRentalModel.cs" />
+    <Compile Include="Migrations\201903121035497_AddedNumberAvaliablePropToRentalModel.Designer.cs">
+      <DependentUpon>201903121035497_AddedNumberAvaliablePropToRentalModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -292,6 +307,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsToGoOnMembership.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -615,6 +631,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901291808377_Added_Driving_License_prop_to_ApplicationUser_Class.resx">
       <DependentUpon>201901291808377_Added_Driving_License_prop_to_ApplicationUser_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903120831027_AddedRental.resx">
+      <DependentUpon>201903120831027_AddedRental.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903120836203_UpdatedRentalModel.resx">
+      <DependentUpon>201903120836203_UpdatedRentalModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903121035497_AddedNumberAvaliablePropToRentalModel.resx">
+      <DependentUpon>201903121035497_AddedNumberAvaliablePropToRentalModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
