@@ -25,6 +25,7 @@ namespace VidlyReborn.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Rental> Rentals { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
 
