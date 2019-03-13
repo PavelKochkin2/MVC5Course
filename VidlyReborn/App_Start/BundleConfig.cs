@@ -26,7 +26,8 @@ namespace VidlyReborn
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"
+                      "~/Content/site.css",
+                      "~/Content/typeahead.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
@@ -36,6 +37,8 @@ namespace VidlyReborn
 
             bundles.Add(new StyleBundle("~/Content/css/datatables").Include(
                 "~/Content/datatables/css/datatables.bootstrap.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/typeahead").Include("~/scripts/typeahead.bundle.js"));
         }
     }
 }
